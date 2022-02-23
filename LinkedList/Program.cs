@@ -117,9 +117,9 @@ namespace LinkedList
             #endregion
 
             #region Case4-单链表更新
-
+            /*
             Case4.LinkedList list1 = new();
-            Case4.Node node1 = new(100,"郭峥",1000);
+            Case4.Node node1 = new(100,"菠萝",1000);
             Case4.Node node2 = new(90, "小明", 1001);
             Case4.Node node3 = new(80, "小刚", 1002);
             Case4.Node node4 = new(70, "小花", 1003);
@@ -131,12 +131,17 @@ namespace LinkedList
 
             list1.Print();
 
-            Case4.Node updateNode = new(666, "郭峥", 1000);
+            Case4.Node updateNode = new(66, "菠萝", 1000);
             list1.Update(updateNode);
 
             list1.Print();
 
             Console.ReadKey();
+            */
+            #endregion
+
+            #region LeetCode
+
             #endregion
         }
     }
