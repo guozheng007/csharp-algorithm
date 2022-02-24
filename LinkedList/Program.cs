@@ -1,6 +1,7 @@
 ﻿using System;
 using LinkedList.Case1;
 using LinkedList.Case2;
+using LinkedList.LeetCode;
 
 namespace LinkedList
 {
@@ -141,6 +142,35 @@ namespace LinkedList
             #endregion
 
             #region LeetCode
+
+            Random rand = new();
+
+            ReverseLinkedList list = new ReverseLinkedList();
+            int i, j;
+            int[,] data = new int[12, 10];
+            string[] name = new string[] { "Allen","Scott","Marry","Jon","Mark","Ricky","Lisa","Jasica","Hanson","Amy","Bob","Jack" };
+
+            Console.WriteLine("学号 成绩 学号 成绩 学号 成绩 学号 成绩\n ");
+
+            for (i = 0; i < 12; i++)
+            {
+                data[i, 0] = i + 1;
+                data[i, 1] = (Math.Abs(rand.Next(50))) + 50;
+
+                list.Insert(data[i, 0], name[i], data[i, 1]);
+            }
+
+            for (i = 0; i < 3; i++)
+            {
+                for ( j = 0; j < 4; j++)
+                {
+                    Console.Write($"[{data[j*3+i,0]}]  [{data[j*3+i,1]}] ");
+                }
+                Console.WriteLine();
+            }
+
+            list.ReverseAndPrint();
+            Console.ReadKey();
 
             #endregion
         }
