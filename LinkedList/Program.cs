@@ -1,6 +1,7 @@
 ﻿using System;
 using LinkedList.Case1;
 using LinkedList.Case2;
+using LinkedList.Case7;
 using LinkedList.LeetCode;
 
 namespace LinkedList
@@ -142,7 +143,7 @@ namespace LinkedList
             #endregion
 
             #region LeetCode
-
+            /*
             Random rand = new();
 
             ReverseLinkedList list = new ReverseLinkedList();
@@ -171,8 +172,64 @@ namespace LinkedList
 
             list.ReverseAndPrint();
             Console.ReadKey();
-
+            */
             #endregion
+
+            #region 环形链表串接
+
+            Random rand = new Random();
+            ConcatStuLinkedList list1 = new ConcatStuLinkedList();
+            Case7.StuLinkedList list2 = new Case7.StuLinkedList();
+
+            int i, j;
+            int[,] data = new int[12, 10];
+            string[] name1 = new string[] { "Allen","Scott","Marry","Jon","Mark","Ricky","Michael","Tom"};
+            string[] name2 = new string[] {"Lisa","Jasica","Hanson","Amy","Bob","Jack","John","Andy" };
+
+            Console.WriteLine("学号 成绩 学号 成绩 学号 成绩 学号 成绩\n ");
+
+            for (i = 0; i < 8; i++)
+            {
+                data[i, 0] = i + 1;
+                data[i, 1] = (Math.Abs(rand.Next(50))) + 50;
+                list1.Insert(data[i,0],name1[i],data[i,1]);
+            }
+
+
+            for (i = 0; i < 2; i++)
+            {
+                for (j = 0; j < 4; j++)
+                {
+                    Console.Write($"[{data[j+i * 4,0]}] [{data[j+i*4,1]}]");
+                }
+
+                Console.WriteLine();
+            }
+
+
+            for ( i = 0; i < 8; i++)
+            {
+                data[i, 0] = i + 9;
+                data[i, 1] = Math.Abs(rand.Next(50)) + 50;
+                list2.Insert(data[i,0], name2[i], data[i,1]);
+            }
+
+            for ( i = 0; i < 2; i++)
+            {
+                for ( j = 0; j < 4; j++)
+                {
+                    Console.Write($"[{data[j+i*4,0]}] [{data[j+i*4,1]}]");
+                }
+                Console.WriteLine();
+            }
+
+            list1.Concat(list2);
+            list1.Print();
+
+
+            Console.ReadKey();
+            #endregion
+
         }
     }
 }
